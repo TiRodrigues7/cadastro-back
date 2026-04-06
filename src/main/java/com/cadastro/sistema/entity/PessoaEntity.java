@@ -1,8 +1,17 @@
-package com.cadastro.sistema.model;
+package com.cadastro.sistema.entity;
 
-public class Pessoa {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
+public class PessoaEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
+
     private String nome;
     private String cpf;
     private String data;
@@ -14,24 +23,7 @@ public class Pessoa {
     private String cidade;
     private String estado;
 
-    public Pessoa(){};
-
-    // Construtor com campos (opcional, mas recomendado)
-    public Pessoa(Integer codigo,String nome, String cpf, String data, String email, String cep, String rua, Integer numero, String bairro, String cidade, String estado) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.cep = cep;
-        this.rua = rua;
-        this.numero = numero;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-
-    }
-
-    public Integer getCodigo() {
+    public Integer getCodigo(){
         return codigo;
     }
 
